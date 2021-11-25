@@ -17,8 +17,8 @@ namespace BeeHiveManagementSystem
         {
             get
             {
-                string status = $"{honey: 0.0} units of honey\n" +
-                                $"{nectar: 0.0 units of nectar}";
+                string status = $"{honey:0.0} units of honey\n" +
+                                $"{nectar:0.0} units of nectar";
                 string warnings = "";
                 if (honey < LOW_LEVEL_WARNING)
                 {
@@ -53,7 +53,7 @@ namespace BeeHiveManagementSystem
 
         public static bool ConsumeHoney(float amount)
         {
-            if (amount > honey)
+            if (honey >= amount)
             {
                 honey -= amount;
                 return true;

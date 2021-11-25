@@ -75,7 +75,6 @@ namespace BeeHiveManagementSystem
         {
             switch (job)
             {
-
                 case "Nectar Collector":
                     AddWorker(new NectarCollector());
                     break;
