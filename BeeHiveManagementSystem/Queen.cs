@@ -11,7 +11,7 @@ namespace BeeHiveManagementSystem
         private const float EGGS_PER_SHIFT = 0.45f;
         private const float HONEY_PER_UNASSIGNED_WORKER = 0.5f;
 
-        private Bee[] workers = new Bee[0];
+        private IWorker[] workers = new IWorker[0];
         private float eggs = 0;
         private float unassignedWorkers = 3;
 
@@ -25,7 +25,7 @@ namespace BeeHiveManagementSystem
             AssigneBee("Egg Care");
         }
 
-        private void AddWorker(Bee worker)
+        private void AddWorker(IWorker worker)
         {
             if (unassignedWorkers >= 1)
             {
@@ -54,7 +54,7 @@ namespace BeeHiveManagementSystem
         private string WorkerStatus(string job)
         {
             int count = 0;
-            foreach (Bee worker in workers)
+            foreach (IWorker worker in workers)
             {
                 if (worker.Job == job)
                 {
