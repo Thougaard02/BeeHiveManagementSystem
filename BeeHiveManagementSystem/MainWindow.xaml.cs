@@ -21,12 +21,13 @@ namespace BeeHiveManagementSystem
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Queen queen = new Queen();
+        private readonly Queen queen;
         private DispatcherTimer timer = new DispatcherTimer();
         public MainWindow()
         {
             InitializeComponent();
-            statusReport.Text = queen.StatusReport;
+            queen = Resources["queen"] as Queen;
+            //statusReport.Text = queen.StatusReport;
             timer.Tick += Timer_Tick; ;
             timer.Interval = TimeSpan.FromSeconds(2);
             timer.Start();
