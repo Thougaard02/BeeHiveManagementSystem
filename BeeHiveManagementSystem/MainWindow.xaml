@@ -10,8 +10,7 @@
     <Window.Resources>
         <local:Queen x:Key="queen"/>
     </Window.Resources>
-    
-    <Grid DataContext="{StaticResource queen}">
+    <Grid DataContext="queen">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="4*"/>
